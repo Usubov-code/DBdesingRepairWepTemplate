@@ -27,5 +27,6 @@ namespace DBdesingRepairWepTemplate.Models
 
         public Social Social { get; set; }
 
+        public List<Blog> Blogs { get; set; }
     }
 }
