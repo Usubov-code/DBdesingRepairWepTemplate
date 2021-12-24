@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DBdesingRepairWepTemplate.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211224124938_asfsafa")]
-    partial class asfsafa
+    [Migration("20211224125815_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

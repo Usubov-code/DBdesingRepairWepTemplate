@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DBdesingRepairWepTemplate.Migrations
 {
-    public partial class REpair : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -267,8 +267,6 @@ namespace DBdesingRepairWepTemplate.Migrations
                     CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     Img = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    CommentId = table.Column<int>(type: "int", nullable: false),
-                    commentId = table.Column<int>(type: "int", nullable: true),
                     BlogId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -280,12 +278,6 @@ namespace DBdesingRepairWepTemplate.Migrations
                         principalTable: "Blogs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Comments_Comments_commentId",
-                        column: x => x.commentId,
-                        principalTable: "Comments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -328,11 +320,6 @@ namespace DBdesingRepairWepTemplate.Migrations
                 name: "IX_Comments_BlogId",
                 table: "Comments",
                 column: "BlogId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_commentId",
-                table: "Comments",
-                column: "commentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TagToBlogs_BlogId",
