@@ -67,6 +67,7 @@ namespace DBdesingRepairWepTemplate.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 

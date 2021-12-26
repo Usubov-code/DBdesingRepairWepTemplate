@@ -1,0 +1,22 @@
+﻿@model Ask
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="Ask" asp-action="create" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Title" class="form-label">Title</label>
+                    <input class="form-control" asp-for="@Model.Title">
+                    <span asp-validation-for="@Model.Title" color="red"> </span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
