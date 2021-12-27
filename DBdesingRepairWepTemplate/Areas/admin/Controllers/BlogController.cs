@@ -1,6 +1,7 @@
 ﻿using DBdesingRepairWepTemplate.Data;
 using DBdesingRepairWepTemplate.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,14 @@ namespace DBdesingRepairWepTemplate.Areas.admin.Controllers
     public class BlogController : Controller
     {
         private readonly AppDbContext _context;
-
+        
         public BlogController(AppDbContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
-            return View(_context.Blogs.ToList());
+            return View(_context.Blogs.Include(e=>e.User).Include(e => e.User).Include(e => e.User).ToList());
         }
 
         [HttpGet]
